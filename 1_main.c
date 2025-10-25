@@ -2,32 +2,19 @@
 //3337641508@qq.com
 //杨曦
 #include <stdio.h>
-
 int main() {
     int score;
-    
-    // 获取用户输入
-    printf("请输入学生的成绩（0-100）：");
     scanf("%d", &score);
-    
-    // 验证输入范围
-    if (score < 0 || score > 100) {
-        printf("输入错误！成绩应该在0-100之间。\n");
-        return 1;
-    }
-    
-    // 判断成绩等级（从高分到低分判断）
-    if (score >= 90) {
+    if (score >= 90 && score <= 100) {
         printf("A\n");
-    } else if (score >= 80) {
+    } else if (score >= 80 && score < 90) {
         printf("B\n");
-    } else if (score >= 70) {
+    } else if (score >= 70 && score < 80) {
         printf("C\n");
-    } else if (score >= 60) {
+    } else if (score >= 60 && score < 70) {
         printf("D\n");
-    } else {
+    } else if (score >= 0 && score < 60) {
         printf("E\n");
     }
-    
     return 0;
 }
