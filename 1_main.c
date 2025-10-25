@@ -1,17 +1,27 @@
 //202510306220
 //3337641508@qq.com
 //杨曦
-# 输入成绩并转换为整数
-score = int(input("请输入学生成绩（0-100）："))
+#include <stdio.h>
 
-# 判断等级
-if score >= 90 and score <= 100:
-    print("A")
-elif score >= 80:
-    print("B")
-elif score >= 70:
-    print("C")
-elif score >= 60:
-    print("D")
-else:
-    print("E")
+int main() {
+    int score;
+    // 提示输入成绩
+    printf("请输入学生成绩（0-100）：");
+    // 读取输入的整数成绩
+    scanf("%d", &score);
+    
+    // 判断成绩等级并输出
+    if (score >= 90 && score <= 100) {
+        printf("A\n");
+    } else if (score >= 80) {
+        printf("B\n");
+    } else if (score >= 70) {
+        printf("C\n");
+    } else if (score >= 60) {
+        printf("D\n");
+    } else {
+        printf("E\n");
+    }
+    
+    return 0;
+}
