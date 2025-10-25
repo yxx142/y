@@ -2,12 +2,10 @@
 //3337641508@qq.com
 //杨曦
 #include <stdio.h>
-
 int main() {
     int score;
     printf("请输入成绩(0-100): ");
     scanf("%d", &score);
-    
     if (score >= 90 && score <= 100) {
         printf("A\n");
     } else if (score >= 80) {
@@ -21,6 +19,5 @@ int main() {
     } else {
         printf("输入错误\n");
     }
-    
     return 0;
 }
