@@ -1,1 +1,26 @@
-gi thub_pat_ 11 A 7 A 72 RAOPWkZox jgE 3 b 5 _e 1 HCKBOJ 2 ZL jNe jmB 3 nbnLzEH 1 w 4 Km 7 CTGRo 5 fmtvNmUDVYMRQCAz 1 nU 21 a 
+//202510306220
+//3337641508@qq.com
+//杨曦
+#include <stdio.h>
+
+int main() {
+    int score;
+    printf("请输入成绩(0-100): ");
+    scanf("%d", &score);
+    
+    if (score >= 90 && score <= 100) {
+        printf("A\n");
+    } else if (score >= 80) {
+        printf("B\n");
+    } else if (score >= 70) {
+        printf("C\n");
+    } else if (score >= 60) {
+        printf("D\n");
+    } else if (score >= 0) {
+        printf("E\n");
+    } else {
+        printf("输入错误\n");
+    }
+    
+    return 0;
+}
