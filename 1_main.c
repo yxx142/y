@@ -3,12 +3,14 @@
 //杨曦
 #include <stdio.h>
 int main() {
-    int arr[5], i, sum = 0;
-    for (i = 0; i < 4; i++) {
-        scanf("%d", &arr[i]);
-        sum += arr[i];
+    int arr[5], num, i = 0;
+    while (i < 5) {
+        scanf("%d", &num);
+        if (num % 2 == 0) {  // 仅保留偶数
+            arr[i] = num;
+            i++;
+        }
     }
-    arr[4] = sum;
     
     for (i = 0; i < 5; i++) {
         if (i > 0) printf(" ");
