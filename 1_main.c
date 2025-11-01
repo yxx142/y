@@ -3,24 +3,17 @@
 //杨曦
 #include <stdio.h>
 int main() {
-    int n, i, is_prime = 1;
-    scanf("%d", &n);
-    
-    if (n <= 1) {
-        is_prime = 0;
-    } else {
-        for (i = 2; i < n; i++) {
-            if (n % i == 0) {
-                is_prime = 0;
-                break;
-            }
+    int i, a, b, c, count = 0;
+    for (i = 100; i <= 999; i++) {
+        a = i / 100;          // 百位
+        b = (i / 10) % 10;    // 十位
+        c = i % 10;           // 个位
+        if (a*a*a + b*b*b + c*c*c == i) {
+            if (count > 0) printf(" ");
+            printf("%d", i);
+            count++;
         }
     }
-    
-    if (is_prime) {
-        printf("密钥安全，密码设置成功\n");
-    } else {
-        printf("密钥不安全，请重新输入\n");
-    }
+    printf("\n");
     return 0;
 }
