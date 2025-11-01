@@ -3,17 +3,16 @@
 //杨曦
 #include <stdio.h>
 int main() {
-    int i = 100, a, b, c, count = 0;
-    while (i <= 999) {
-        a = i / 100;
-        b = (i / 10) % 10;
-        c = i % 10;
-        if (a*a*a + b*b*b + c*c*c == i) {
-            if (count > 0) printf(" ");
-            printf("%d", i);
-            count++;
-        }
-        i++;
+    int arr[5], i, sum = 0;
+    for (i = 0; i < 4; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+    arr[4] = sum;
+    
+    for (i = 0; i < 5; i++) {
+        if (i > 0) printf(" ");
+        printf("%d", arr[i]);
     }
     printf("\n");
     return 0;
