@@ -3,14 +3,31 @@
 //杨曦
 #include <stdio.h>
 
-// 计算等差数列和
-int arithmeticSum(int a1, int an, int step) {
-    int n = (an - a1) / step + 1; // 项数
-    return (a1 + an) * n / 2;
+// 计算数组元素和
+int arraySum(int arr[], int length) {
+    int sum = 0;
+    for (int i = 0; i < length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+// 计算数组元素积
+int arrayProduct(int arr[], int length) {
+    int product = 1;
+    for (int i = 0; i < length; i++) {
+        product *= arr[i];
+    }
+    return product;
 }
 
 int main() {
-    // 计算1到100的和（步长为1）
-    printf("%d\n", arithmeticSum(1, 100, 1));
+    int arr[5];
+    // 输入数组
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+    // 输出和与积
+    printf("%d %d\n", arraySum(arr, 5), arrayProduct(arr, 5));
     return 0;
 }
