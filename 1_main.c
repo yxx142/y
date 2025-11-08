@@ -3,22 +3,13 @@
 //杨曦
 #include <stdio.h>
 
-// 计算数组元素和
-int arraySum(int arr[], int length) {
-    int sum = 0;
-    for (int i = 0; i < length; i++) {
-        sum += arr[i];
+// 反转数组元素
+void reverseArray(int arr[], int length) {
+    for (int i = 0; i < length / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[length - 1 - i];
+        arr[length - 1 - i] = temp;
     }
-    return sum;
-}
-
-// 计算数组元素积
-int arrayProduct(int arr[], int length) {
-    int product = 1;
-    for (int i = 0; i < length; i++) {
-        product *= arr[i];
-    }
-    return product;
 }
 
 int main() {
@@ -27,7 +18,16 @@ int main() {
     for (int i = 0; i < 5; i++) {
         scanf("%d", &arr[i]);
     }
-    // 输出和与积
-    printf("%d %d\n", arraySum(arr, 5), arrayProduct(arr, 5));
+    // 反转数组
+    reverseArray(arr, 5);
+    // 输出反转结果（最后一个元素后无空格）
+    for (int i = 0; i < 5; i++) {
+        if (i == 4) {
+            printf("%d", arr[i]);
+        } else {
+            printf("%d ", arr[i]);
+        }
+    }
+    printf("\n");
     return 0;
 }
