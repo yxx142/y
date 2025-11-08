@@ -2,23 +2,21 @@
 //3337641508@qq.com
 //杨曦
 #include <stdio.h>
+
 int main() {
-    int arr[5], i;
-    for (i = 0; i < 4; i++) {
-        scanf("%d", &arr[i]);
+    int matrix[3][3];
+    // 输入矩阵
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
     }
-    
-    // 元素后移一位
-    arr[4] = arr[3];
-    arr[3] = arr[2];
-    arr[2] = arr[1];
-    arr[1] = arr[0];
-    arr[0] = 0;  // 首位补0
-    
-    for (i = 0; i < 5; i++) {
-        if (i > 0) printf(" ");
-        printf("%d", arr[i]);
+    // 输出矩阵
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
     }
-    printf("\n");
     return 0;
 }
