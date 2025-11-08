@@ -3,21 +3,14 @@
 //杨曦
 #include <stdio.h>
 
-// 计算a的b次幂
-int power(int a, int b) {
-    int result = 1;
-    for (int i = 0; i < b; i++) {
-        result *= a;
-    }
-    return result;
+// 计算等差数列和
+int arithmeticSum(int a1, int an, int step) {
+    int n = (an - a1) / step + 1; // 项数
+    return (a1 + an) * n / 2;
 }
 
 int main() {
-    int sum = 0;
-    // 计算1²+2²+3²+4²+5²
-    for (int i = 1; i <= 5; i++) {
-        sum += power(i, 2);
-    }
-    printf("%d\n", sum);
+    // 计算1到100的和（步长为1）
+    printf("%d\n", arithmeticSum(1, 100, 1));
     return 0;
 }
