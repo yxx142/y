@@ -4,25 +4,25 @@
 #include <stdio.h>
 
 int main() {
-    int matrix[3][3], transpose[3][3];
-    // 输入矩阵
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            scanf("%d", &matrix[i][j]);
+    int nums[10];
+    // 输入10个数
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &nums[i]);
+    }
+    // 冒泡排序
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9 - i; j++) {
+            if (nums[j] > nums[j + 1]) {
+                int temp = nums[j];
+                nums[j] = nums[j + 1];
+                nums[j + 1] = temp;
+            }
         }
     }
-    // 计算转置矩阵
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            transpose[j][i] = matrix[i][j];
-        }
+    // 输出排序结果
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", nums[i]);
     }
-    // 输出转置矩阵
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            printf("%d ", transpose[i][j]);
-        }
-        printf("\n");
-    }
+    printf("\n");
     return 0;
 }
