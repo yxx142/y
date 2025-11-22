@@ -4,17 +4,25 @@
 #include <stdio.h>
 
 int main() {
-    int a;
-    scanf("%d", &a);
+    int arr[5];
     
-    // 定义指针指向变量a
-    int *p = &a;
+    // 输入数组元素
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
     
-    // 通过指针修改a的值（加10）
-    *p += 10;
+    // 通过指针将数组元素乘以2
+    int *p = arr;
+    for (int i = 0; i < 5; i++) {
+        *p *= 2;
+        p++;
+    }
     
     // 打印结果
-    printf("%d,%d\n", a, *p);
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     
     return 0;
 }
