@@ -3,26 +3,22 @@
 //杨曦
 #include <stdio.h>
 
+// 交换函数，参数为指针
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int main() {
-    int arr[5];
+    int x, y;
+    scanf("%d %d", &x, &y);
     
-    // 输入数组元素
-    for (int i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
-    }
-    
-    // 通过指针将数组元素乘以2
-    int *p = arr;
-    for (int i = 0; i < 5; i++) {
-        *p *= 2;
-        p++;
-    }
+    // 调用交换函数
+    swap(&x, &y);
     
     // 打印结果
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    printf("%d %d\n", x, y);
     
     return 0;
 }
