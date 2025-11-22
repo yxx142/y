@@ -3,31 +3,18 @@
 //杨曦
 #include <stdio.h>
 
-// 反转数组元素
-void reverseArray(int arr[], int length) {
-    for (int i = 0; i < length / 2; i++) {
-        int temp = arr[i];
-        arr[i] = arr[length - 1 - i];
-        arr[length - 1 - i] = temp;
-    }
-}
-
 int main() {
-    int arr[5];
-    // 输入数组
-    for (int i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
-    }
-    // 反转数组
-    reverseArray(arr, 5);
-    // 输出反转结果（最后一个元素后无空格）
-    for (int i = 0; i < 5; i++) {
-        if (i == 4) {
-            printf("%d", arr[i]);
-        } else {
-            printf("%d ", arr[i]);
-        }
-    }
-    printf("\n");
+    int a;
+    scanf("%d", &a);
+    
+    // 定义指针指向变量a
+    int *p = &a;
+    
+    // 通过指针修改a的值（加10）
+    *p += 10;
+    
+    // 打印结果
+    printf("%d,%d\n", a, *p);
+    
     return 0;
 }
