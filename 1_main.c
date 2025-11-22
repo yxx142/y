@@ -3,13 +3,14 @@
 //杨曦
 #include <stdio.h>
 
-// 数组元素自增函数
-void incrementArray(int *arr, int len) {
-    int *p = arr;
-    for (int i = 0; i < len; i++) {
-        (*p)++;  // 注意括号，先解引用再自增
-        p++;
+// 数组元素后移函数
+void shiftArray(int *ptr_arr, int len) {
+    // 从最后一个元素开始向前移动
+    for (int i = len - 1; i > 0; i--) {
+        *(ptr_arr + i) = *(ptr_arr + i - 1);
     }
+    // 第一个位置补0
+    *ptr_arr = 0;
 }
 
 int main() {
@@ -20,8 +21,8 @@ int main() {
         scanf("%d", &arr[i]);
     }
     
-    // 调用自增函数
-    incrementArray(arr, 5);
+    // 调用后移函数
+    shiftArray(arr, 5);
     
     // 打印结果
     for (int i = 0; i < 5; i++) {
