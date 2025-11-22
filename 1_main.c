@@ -2,26 +2,38 @@
 //3337641508@qq.com
 //杨曦
 #include <stdio.h>
-#include <stdlib.h>  // 包含malloc和free函数
+
+// 冒泡排序函数，使用指针操作
+void bubbleSort(int *arr, int len) {
+    for (int i = 0; i < len - 1; i++) {
+        for (int j = 0; j < len - i - 1; j++) {
+            // 比较相邻元素
+            if (*(arr + j) > *(arr + j + 1)) {
+                // 交换元素
+                int temp = *(arr + j);
+                *(arr + j) = *(arr + j + 1);
+                *(arr + j + 1) = temp;
+            }
+        }
+    }
+}
 
 int main() {
-    // 动态申请内存
-    int *arr = (int *)malloc(5 * sizeof(int));
+    int arr[10];
     
-    // 输入数组元素
-    for (int i = 0; i < 5; i++) {
-        scanf("%d", arr + i);  // 等价于&arr[i]
+    // 输入10个整数
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
     }
     
-    // 打印数组元素
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", *(arr + i));  // 等价于arr[i]
+    // 调用排序函数
+    bubbleSort(arr, 10);
+    
+    // 打印排序结果
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
     }
     printf("\n");
-    
-    // 释放内存，避免内存泄漏
-    free(arr);
-    arr = NULL;  // 防止野指针
     
     return 0;
 }
