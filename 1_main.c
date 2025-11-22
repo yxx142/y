@@ -3,22 +3,31 @@
 //杨曦
 #include <stdio.h>
 
-// 交换函数，参数为指针
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+// 数组元素自增函数
+void incrementArray(int *arr, int len) {
+    int *p = arr;
+    for (int i = 0; i < len; i++) {
+        (*p)++;  // 注意括号，先解引用再自增
+        p++;
+    }
 }
 
 int main() {
-    int x, y;
-    scanf("%d %d", &x, &y);
+    int arr[5];
     
-    // 调用交换函数
-    swap(&x, &y);
+    // 输入数组元素
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // 调用自增函数
+    incrementArray(arr, 5);
     
     // 打印结果
-    printf("%d %d\n", x, y);
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
     
     return 0;
 }
