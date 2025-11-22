@@ -2,33 +2,26 @@
 //3337641508@qq.com
 //杨曦
 #include <stdio.h>
-
-// 数组元素后移函数
-void shiftArray(int *ptr_arr, int len) {
-    // 从最后一个元素开始向前移动
-    for (int i = len - 1; i > 0; i--) {
-        *(ptr_arr + i) = *(ptr_arr + i - 1);
-    }
-    // 第一个位置补0
-    *ptr_arr = 0;
-}
+#include <stdlib.h>  // 包含malloc和free函数
 
 int main() {
-    int arr[5];
+    // 动态申请内存
+    int *arr = (int *)malloc(5 * sizeof(int));
     
     // 输入数组元素
     for (int i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", arr + i);  // 等价于&arr[i]
     }
     
-    // 调用后移函数
-    shiftArray(arr, 5);
-    
-    // 打印结果
+    // 打印数组元素
     for (int i = 0; i < 5; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", *(arr + i));  // 等价于arr[i]
     }
     printf("\n");
+    
+    // 释放内存，避免内存泄漏
+    free(arr);
+    arr = NULL;  // 防止野指针
     
     return 0;
 }
